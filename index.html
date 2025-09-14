@@ -1,339 +1,154 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Manual - Global Rastreamento</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-:root{
-  --azul:#003366;
-  --verde:#25D366;
-  --vermelho:#dc3545;
-  --cinza:#9e9e9e;
-  --amarelo:#FFCC00;
-  --branco:#ffffff;
-}
-body{
-  font-family:'Inter',sans-serif;
-  margin:0;
-  padding:0;
-  background:#f7f9fb;
-  color:#222;
-}
-header{
-  background:linear-gradient(90deg,var(--azul),#001f3a);
-  color:var(--branco);
-  display:flex;
-  align-items:center;
-  gap:16px;
-  padding:20px;
-}
-header img{
-  max-width:100px;
-  height:auto;
-  border-radius:6px;
-  background:var(--branco);
-}
-header h1{
-  font-size:22px;
-  margin:0;
-}
-main{
-  padding:20px;
-  max-width:1100px;
-  margin:0 auto;
-}
-h2{
-  color:var(--azul);
-  font-size:20px;
-  margin-top:30px;
-  margin-bottom:15px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:18px;
-}
-.card{
-  background:var(--branco);
-  border-radius:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  transition:transform .2s, box-shadow .2s;
-}
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 24px rgba(0,0,0,0.12);
-}
-.icon{
-  font-size:34px;
-}
-.title{
-  font-weight:700;
-  font-size:16px;
-  margin:0;
-  color:var(--azul);
-}
-.desc{
-  font-size:14px;
-  color:#444;
-}
-.snippet{
-  padding:10px;
-  border-radius:10px;
-  font-family:monospace;
-  font-size:13px;
-  font-weight:500;
-  margin-top:6px;
-}
-footer{
-  text-align:center;
-  background:#001f3a;
-  color:#fff;
-  padding:16px;
-  margin-top:30px;
-  font-size:13px;
-}
-/* WhatsApp button */
-.whatsapp-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  z-index:9999;
-}
-.whatsapp-badge{
-  background:var(--verde);
-  color:#fff;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  box-shadow:0 6px 20px rgba(37,211,102,0.35);
-  animation:whatsappPulse 2s infinite;
-}
-.whatsapp-label{
-  background:#fff;
-  padding:10px 14px;
-  border-radius:24px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-  color:#111;
-  font-weight:600;
-}
-@keyframes whatsappPulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.08)}
-  100%{transform:scale(1)}
-}
-
-.diagram{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:14px;
-  margin:20px auto;
-  font-size:18px;
-}
-.diagram .node{
-  background:#f9f9f9;
-  border:2px solid #003366;
-  border-radius:12px;
-  padding:14px 18px;
-  min-width:120px;
-  text-align:center;
-  font-weight:600;
-  color:#003366;
-  box-shadow:0 4px 10px rgba(0,0,0,0.08);
-}
-.diagram .arrow{
-  font-size:20px;
-  color:#003366;
-}
-
-.top-nav{
-  background:#001f3a;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  padding:12px;
-}
-.top-nav a{
-  background:#003366;
-  color:#fff;
-  text-decoration:none;
-  padding:8px 14px;
-  border-radius:6px;
-  font-weight:600;
-  transition:background .2s, transform .2s;
-  font-size:14px;
-}
-.top-nav a:hover{
-  background:#00509e;
-  transform:translateY(-2px);
-}
-</style></head>
-<body>
-<header>
-<img alt="logo" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='200' height='40'&gt;&lt;rect width='200' height='40' fill='%23003366'/&gt;&lt;text x='12' y='26' font-family='Arial' font-size='16' fill='%23fff'&gt;Global Rastreamento&lt;/text&gt;&lt;/svg&gt;"/>
-<h1>Manual Online — Funcionalidades</h1>
-</header>
-<nav class="top-nav">
-<a href="https://globalrastreamento.net.br/" target="_blank">📡 Plataforma</a>
-<a href="https://globalrastreamento2020-maker.github.io/globaltecnologia/#" target="_blank">🌐 Nosso Site</a>
-<a href="https://apps.apple.com/br/app/global-manager/id6744368781" target="_blank">🍏 App Store</a>
-<a href="https://play.google.com/store/apps/details?id=com.app.globalrastreamento.net" target="_blank">🤖 Google Play</a>
-<a href="https://privacy.globalrastreamento.net.br/" target="_blank">🔒 Privacidade</a>
-<a href="https://www.youtube.com/watch?v=XWHL8ozs3Ww" target="_blank">🎥 Tutorial</a>
-</nav>
-
-<div class="container">
-<main>
-<section>
-<h2>Apresentação</h2>
-<p class="lead">A Global Rastreamento fornece soluções de rastreamento e gestão de frotas. A utilização da plataforma é feita em regime de <b>autogestão pelos clientes licenciados</b>, garantindo segurança e redução de custos.</p>
-</section>
-<section>
-<h2>Visão Geral da Tela</h2>
-<div class="grid">
-</div>
-</section>
-<section>
-<h2>Ícones presentes nos Cards</h2>
-<p class="note">Abaixo estão os ícones mais comuns encontrados dentro dos cards e seu significado.</p>
-<table>
-<tr><th>Ícone</th><th>Significado</th></tr>
-<tr><td><i class="fas fa-key verde"></i> <b>Ignição</b></td><td>Indica que a ignição do veículo está ligada (Ignição ligada).</td></tr>
-<tr><td><i class="fas fa-power-off vermelho"></i> <b>Ignição</b></td><td>Indica que a ignição do veículo está desligada (Ignição desligada).</td></tr>
-<tr><td><i class="fas fa-car cinza"></i> <b>Veículo inativo</b></td><td>Veículo sem atividade ou sem comunicação.</td></tr>
-<tr><td><i class="fas fa-hashtag amarelo"></i> <b>Quantidade de veículos</b></td><td>Mostra a quantidade de veículos (contador).</td></tr>
-<tr><td>🔒 <b>Cadeado</b></td><td>Bloqueio/Desbloqueio do veículo. Quando ativo, o rastreador pode impedir partida (dependendo do dispositivo instalado).</td></tr>
-<tr><td>📡 <b>Antena / Sinal</b></td><td>Mostra a qualidade da conexão GPS/GLONASS e se o rastreador está comunicando corretamente.</td></tr>
-<tr><td>🔋 <b>Bateria</b></td><td>Indica o nível de carga do rastreador (quando aplicável) ou a tensão da bateria do veículo.</td></tr>
-<tr><td>⏱ <b>Relógio / Hora</b></td><td>Exibe a hora do último envio de dados pelo dispositivo.</td></tr>
-<tr><td>⚓ <b>Âncora</b></td><td>Marca que o veículo está em modo de parada/âncora (parado por um período num local).</td></tr>
-<tr><td>➡️ <b>Direção / Setas</b></td><td>Indica sentido/direção do deslocamento e se há movimento.</td></tr>
-</table>
-</section>
-<section>
-<h2>Menu de Relatórios</h2>
-<div class="grid">
-</div>
-</section>
-</main>
-<main>
-<h2>🔎 Como funciona o sistema de rastreamento?</h2>
-<div class="diagram">
-<div class="node">🚗<br/><span>Veículo com Rastreador</span></div>
-<div class="arrow">➡️</div>
-<div class="node">📡<br/><span>Antenas GPRS</span></div>
-<div class="arrow">➡️</div>
-<div class="node">☁️<br/><span>Servidor em Nuvem</span></div>
-<div class="arrow">➡️</div>
-<div class="node">📱<br/><span>Smartphone / Central</span></div>
-</div>
-<p style="text-align:center;margin-top:10px;">🛰️ Satélite GPS envia posição ao veículo constantemente</p>
-<div style="display:flex;flex-direction:column;align-items:center;gap:20px;">
-<div style="max-width:900px;text-align:justify;line-height:1.6;font-size:15px;color:#333;">
-<p><strong>Os equipamentos rastreadores móveis e veiculares</strong>, quando ativados, passam a receber diversas informações diretamente dos satélites (GPS) e transmitem essas informações em tempo real (via GPRS) através do chip de dados inserido no rastreador para a Central de Rastreamento. As informações são tratadas e ficam disponíveis para consulta imediata.</p>
-<h3>📍 O que é GPS?</h3>
-<p><strong>GPS</strong> significa Sistema de Posicionamento Global. É um sistema de navegação por satélites que fornece ao rastreador a sua posição a qualquer momento e em qualquer lugar na Terra. Consiste numa “constelação” de 24 satélites. Cada um circunda a Terra duas vezes por dia a uma altitude de 20.200 kms e a uma velocidade de 11.265 kms por hora. O rastreador capta os sinais de quatro satélites para determinar as suas próprias coordenadas.</p>
-<h3>📡 O que é GPRS?</h3>
-<p><strong>GPRS</strong> é um serviço prestado pelas empresas de telefonia móvel (Vivo, Tim, Claro, Oi) que permite a transmissão, através do chip que é colocado dentro do rastreador, de dados entre o próprio rastreador e a central de monitoramento (software).</p>
-</div>
-</div>
-</main>
-<main>
-<h2>📌 Funcionalidades com Ícones</h2>
-<table style="width:100%;border-collapse:collapse;font-size:15px;text-align:left;box-shadow:0 6px 20px rgba(0,0,0,0.08);border-radius:10px;overflow:hidden;">
-<thead style="background:#003366;color:#fff;">
-<tr>
-<th style="padding:12px;">Ícone</th>
-<th style="padding:12px;">Funcionalidade</th>
-<th style="padding:12px;">Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr style="background:#f9f9f9;">
-<td style="padding:10px;font-size:22px;">🚫🔌</td>
-<td style="padding:10px;">Bloqueio do veículo offline</td>
-<td style="padding:10px;">Se o rastreador estiver offline, o bloqueio não é executado até reconexão.</td>
-</tr>
-<tr>
-<td style="padding:10px;font-size:22px;">📡🌑</td>
-<td style="padding:10px;">Área de sombra</td>
-<td style="padding:10px;">Sem cobertura celular ou GPS. Dados são enviados após reconexão.</td>
-</tr>
-<tr style="background:#f9f9f9;">
-<td style="padding:10px;font-size:22px;">🛑🚗</td>
-<td style="padding:10px;">Bloqueio em movimento</td>
-<td style="padding:10px;">Não recomendado por segurança. Preferível bloquear parado.</td>
-</tr>
-<tr>
-<td style="padding:10px;font-size:22px;">🔗📍</td>
-<td style="padding:10px;">Link de compartilhamento</td>
-<td style="padding:10px;">Permite compartilhar a localização em tempo real por link temporário.</td>
-</tr>
-<tr style="background:#f9f9f9;">
-<td style="padding:10px;font-size:22px;">🗺️🚘</td>
-<td style="padding:10px;">Cerca virtual</td>
-<td style="padding:10px;">Área delimitada no mapa com alerta de entrada/saída.</td>
-</tr>
-<tr>
-<td style="padding:10px;font-size:22px;">🛡️⛔</td>
-<td style="padding:10px;">Cerca virtual com bloqueio</td>
-<td style="padding:10px;">Além do alerta, pode bloquear automaticamente ao sair da área.</td>
-</tr>
-</tbody>
-</table>
-</main>
-</div>
-<!-- Floating WhatsApp button -->
-<a class="whatsapp-float" href="https://wa.me/5575988515825?text=Ainda%20tenho%20d%C3%BAvida" rel="noopener" target="_blank">
-<div class="whatsapp-badge"><i aria-hidden="true" class="fab fa-whatsapp"></i></div>
-<span class="whatsapp-label">Ainda tenho dúvida</span>
-</a>
-<script>
-(function(){
-  try {
-    var colors = ['#25D366','#dc3545','#9e9e9e','#FFCC00']; // verde, vermelho, cinza, amarelo
-    var snippets = Array.prototype.slice.call(document.querySelectorAll('.snippet'));
-    for (var i=0;i<snippets.length;i++){
-      var c = colors[i % colors.length];
-      snippets[i].style.background = c;
-      // ajusta cor do texto para legibilidade
-      if (c.toUpperCase() === '#FFCC00') {
-        snippets[i].style.color = '#111'; // amarelo -> texto escuro
-      } else {
-        snippets[i].style.color = '#fff'; // demais -> texto branco
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual da Plataforma Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animação personalizada do botão WhatsApp */
+    @keyframes pulse-whatsapp {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(34, 197, 94, 0.9);
       }
     }
-  } catch(e) { console && console.error(e); }
-})();
-</script>
-<main>
-<div class="grid">
-</div>
-</main>
-<a class="whatsapp-float" href="https://wa.me/5575988515825?text=Ainda%20tenho%20d%C3%BAvida" rel="noopener" target="_blank">
-<div class="whatsapp-badge"><i aria-hidden="true" class="fab fa-whatsapp"></i></div>
-<span class="whatsapp-label">Ainda tenho dúvida</span>
-</a>
-<footer>
-  © 2025 Global Rastreamento — Manual Moderno com Ícones e WhatsApp
-</footer>
+    .animate-pulse-whatsapp {
+      animation: pulse-whatsapp 2s infinite;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-900 text-white p-4 flex flex-wrap justify-between items-center shadow-md">
+    <h1 class="text-xl font-bold">Manual da Plataforma Online</h1>
+    <div class="space-x-4">
+      <a href="https://globalrastreamento.net.br/" target="_blank" class="hover:text-yellow-400">Plataforma</a>
+      <a href="https://apps.apple.com/br/app/global-manager/id6744368781" target="_blank" class="hover:text-yellow-400">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.app.globalrastreamento.net" target="_blank" class="hover:text-yellow-400">Google Play</a>
+      <a href="https://globalrastreamento2020-maker.github.io/globaltecnologia/#" target="_blank" class="hover:text-yellow-400">Nosso Site</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-gradient-to-r from-blue-900 via-blue-700 to-yellow-500 text-white text-center py-12 px-6">
+    <h2 class="text-3xl md:text-4xl font-bold">Bem-vindo ao Manual da Plataforma</h2>
+    <p class="mt-4 text-lg">Saiba como usar todos os recursos do sistema de rastreamento Global Rastreamento</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-12">
+
+    <!-- Status dos Veículos -->
+    <section>
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">🚦 Status dos Veículos</h3>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <li class="bg-green-100 p-4 rounded shadow">🟢 Online</li>
+        <li class="bg-red-100 p-4 rounded shadow">🔴 Offline</li>
+        <li class="bg-gray-100 p-4 rounded shadow">⚪ Desconhecido</li>
+        <li class="bg-yellow-100 p-4 rounded shadow">🟡 Quantidade</li>
+      </ul>
+    </section>
+
+    <!-- Dashboard -->
+    <section>
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">🏠 Dashboard</h3>
+      <p>O Dashboard mostra os principais indicadores da frota:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>👤 Usuários cadastrados</li>
+        <li>🚗 Veículos registrados</li>
+        <li>🟢 Veículos online em tempo real</li>
+        <li>🔴 Veículos offline</li>
+        <li>⚪ Veículos desconhecidos</li>
+        <li>🔑 Ignição ligada</li>
+      </ul>
+    </section>
+
+    <!-- Detalhes do Veículo -->
+    <section>
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">🚙 Detalhes do Veículo</h3>
+      <p>Ao clicar em um veículo, aparecem informações detalhadas:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>🔑 Ignição: ligada ou desligada</li>
+        <li>⚡ Velocidade em km/h</li>
+        <li>🧭 Direção do deslocamento</li>
+        <li>📍 Endereço atual</li>
+        <li>⏱️ Hora do dispositivo</li>
+        <li>📡 Hora GPS</li>
+        <li>🖥️ Hora do servidor</li>
+        <li>🛰️ Satélites conectados</li>
+        <li>📏 Distância percorrida</li>
+        <li>🛑 Movimento (parado ou em deslocamento)</li>
+      </ul>
+    </section>
+
+    <!-- Localização no Mapa -->
+    <section>
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">🗺️ Localização no Mapa</h3>
+      <p>No mapa é possível acompanhar:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>🚗 Posição atual do veículo</li>
+        <li>⚡ Velocidade exibida junto ao ícone</li>
+        <li>🔵 Precisão do GPS (círculo azul)</li>
+        <li>🌍 Visualização em mapa ou satélite</li>
+      </ul>
+    </section>
+
+    <!-- Menu Lateral -->
+    <section>
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">📂 Menu Lateral</h3>
+      <p>O menu concentra todas as ferramentas:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>🏠 Dashboard</li>
+        <li>⚙️ Configurações</li>
+        <li>📑 Relatórios (Combinado, Rotas, Eventos, Viagens, Paradas, Resumo, Gráficos, Replay)</li>
+        <li>📜 Logs e Estatísticas</li>
+        <li>📅 Agendamento de relatórios</li>
+      </ul>
+    </section>
+
+    <!-- Relatórios -->
+    <section>
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">📑 Relatórios</h3>
+      <p>Podem ser gerados em diferentes formatos com informações de:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Rotas percorridas</li>
+        <li>Eventos registrados</li>
+        <li>Histórico de viagens e paradas</li>
+        <li>Estatísticas gráficas</li>
+      </ul>
+    </section>
+
+    <!-- Orientações sobre Bloqueio Veicular -->
+    <section class="bg-yellow-50 p-6 rounded-lg shadow">
+      <h3 class="text-2xl font-bold text-blue-900 mb-4">🔒 Orientações sobre Bloqueio Veicular</h3>
+      <p>O bloqueio veicular é eficiente, mas pode ter limitações:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li><b>Área sem cobertura:</b> comando executado quando voltar o sinal.</li>
+        <li><b>Sem sinal no envio:</b> comando fica pendente até reconexão.</li>
+        <li><b>Veículo em movimento:</b> não recomendado bloquear em alta velocidade.</li>
+        <li><b>Status incorreto:</b> pode indicar movimento por atraso, sensores ou reboque.</li>
+      </ul>
+      <p class="mt-4">Mesmo bloqueado, o veículo pode se mover se empurrado ou rebocado. O motor continua cortado.</p>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-blue-900 text-white text-center p-4 mt-12">
+    <p>&copy; 2025 Global Rastreamento - Todos os direitos reservados</p>
+    <a href="https://privacy.globalrastreamento.net.br/" target="_blank" class="underline text-yellow-400 hover:text-yellow-300">Política de Privacidade</a>
+  </footer>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5575988515825?text=Ainda%20tenho%20dúvida" target="_blank" 
+     class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-110 animate-pulse-whatsapp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-8 h-8">
+  </a>
+
 </body>
 </html>
