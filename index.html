@@ -6,59 +6,85 @@
   <title>Manual da Plataforma Online</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Animação personalizada do botão WhatsApp */
+    /* Fundo animado futurista */
+    body {
+      background: linear-gradient(-45deg, #0a0f24, #001f3f, #003366, #00509e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Animação botão WhatsApp */
     @keyframes pulse-whatsapp {
       0%, 100% {
         transform: scale(1);
-        box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
       }
       50% {
         transform: scale(1.1);
-        box-shadow: 0 0 25px rgba(34, 197, 94, 0.9);
+        box-shadow: 0 0 30px rgba(34, 197, 94, 1);
       }
     }
     .animate-pulse-whatsapp {
       animation: pulse-whatsapp 2s infinite;
     }
+
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Neon hover links */
+    .neon-link:hover {
+      color: #ffeb3b;
+      text-shadow: 0 0 8px #ffeb3b, 0 0 12px #ffeb3b;
+    }
   </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="font-sans">
 
   <!-- Navbar -->
-  <nav class="bg-blue-900 text-white p-4 flex flex-wrap justify-between items-center shadow-md">
-    <h1 class="text-xl font-bold">Manual da Plataforma Online</h1>
-    <div class="space-x-4">
-      <a href="https://globalrastreamento.net.br/" target="_blank" class="hover:text-yellow-400">Plataforma</a>
-      <a href="https://apps.apple.com/br/app/global-manager/id6744368781" target="_blank" class="hover:text-yellow-400">App Store</a>
-      <a href="https://play.google.com/store/apps/details?id=com.app.globalrastreamento.net" target="_blank" class="hover:text-yellow-400">Google Play</a>
-      <a href="https://globalrastreamento2020-maker.github.io/globaltecnologia/#" target="_blank" class="hover:text-yellow-400">Nosso Site</a>
+  <nav class="glass fixed top-0 left-0 w-full z-50 text-white px-6 py-4 flex justify-between items-center shadow-lg">
+    <h1 class="text-2xl font-bold text-yellow-400">🚀 Global Rastreamento</h1>
+    <div class="space-x-6 text-lg">
+      <a href="https://globalrastreamento.net.br/" target="_blank" class="neon-link">Plataforma</a>
+      <a href="https://apps.apple.com/br/app/global-manager/id6744368781" target="_blank" class="neon-link">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.app.globalrastreamento.net" target="_blank" class="neon-link">Google Play</a>
+      <a href="https://globalrastreamento2020-maker.github.io/globaltecnologia/#" target="_blank" class="neon-link">Nosso Site</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="bg-gradient-to-r from-blue-900 via-blue-700 to-yellow-500 text-white text-center py-12 px-6">
-    <h2 class="text-3xl md:text-4xl font-bold">Bem-vindo ao Manual da Plataforma</h2>
-    <p class="mt-4 text-lg">Saiba como usar todos os recursos do sistema de rastreamento Global Rastreamento</p>
+  <header class="text-center pt-32 pb-16 px-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-yellow-400 drop-shadow-lg">Manual da Plataforma Online</h2>
+    <p class="mt-6 text-xl text-gray-200 max-w-3xl mx-auto">Aprenda a utilizar todos os recursos da Global Rastreamento com design inovador, dados em tempo real e máxima segurança.</p>
   </header>
 
-  <main class="max-w-5xl mx-auto p-6 space-y-12">
+  <main class="max-w-6xl mx-auto px-6 space-y-16">
 
     <!-- Status dos Veículos -->
-    <section>
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">🚦 Status dos Veículos</h3>
-      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <li class="bg-green-100 p-4 rounded shadow">🟢 Online</li>
-        <li class="bg-red-100 p-4 rounded shadow">🔴 Offline</li>
-        <li class="bg-gray-100 p-4 rounded shadow">⚪ Desconhecido</li>
-        <li class="bg-yellow-100 p-4 rounded shadow">🟡 Quantidade</li>
-      </ul>
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-6">🚦 Status dos Veículos</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-6 rounded-xl bg-green-600/30 shadow-lg hover:scale-105 transition">🟢 Online</div>
+        <div class="p-6 rounded-xl bg-red-600/30 shadow-lg hover:scale-105 transition">🔴 Offline</div>
+        <div class="p-6 rounded-xl bg-gray-500/30 shadow-lg hover:scale-105 transition">⚪ Desconhecido</div>
+        <div class="p-6 rounded-xl bg-yellow-500/30 shadow-lg hover:scale-105 transition">🟡 Quantidade</div>
+      </div>
     </section>
 
     <!-- Dashboard -->
-    <section>
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">🏠 Dashboard</h3>
-      <p>O Dashboard mostra os principais indicadores da frota:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-4">🏠 Dashboard</h3>
+      <p class="text-gray-200">O Dashboard mostra os principais indicadores da frota:</p>
+      <ul class="list-disc list-inside mt-4 text-gray-300 space-y-2">
         <li>👤 Usuários cadastrados</li>
         <li>🚗 Veículos registrados</li>
         <li>🟢 Veículos online em tempo real</li>
@@ -69,10 +95,10 @@
     </section>
 
     <!-- Detalhes do Veículo -->
-    <section>
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">🚙 Detalhes do Veículo</h3>
-      <p>Ao clicar em um veículo, aparecem informações detalhadas:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-4">🚙 Detalhes do Veículo</h3>
+      <p class="text-gray-200">Ao clicar em um veículo, aparecem informações detalhadas:</p>
+      <ul class="list-disc list-inside mt-4 text-gray-300 space-y-2">
         <li>🔑 Ignição: ligada ou desligada</li>
         <li>⚡ Velocidade em km/h</li>
         <li>🧭 Direção do deslocamento</li>
@@ -87,10 +113,10 @@
     </section>
 
     <!-- Localização no Mapa -->
-    <section>
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">🗺️ Localização no Mapa</h3>
-      <p>No mapa é possível acompanhar:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-4">🗺️ Localização no Mapa</h3>
+      <p class="text-gray-200">No mapa é possível acompanhar:</p>
+      <ul class="list-disc list-inside mt-4 text-gray-300 space-y-2">
         <li>🚗 Posição atual do veículo</li>
         <li>⚡ Velocidade exibida junto ao ícone</li>
         <li>🔵 Precisão do GPS (círculo azul)</li>
@@ -99,10 +125,10 @@
     </section>
 
     <!-- Menu Lateral -->
-    <section>
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">📂 Menu Lateral</h3>
-      <p>O menu concentra todas as ferramentas:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-4">📂 Menu Lateral</h3>
+      <p class="text-gray-200">O menu concentra todas as ferramentas:</p>
+      <ul class="list-disc list-inside mt-4 text-gray-300 space-y-2">
         <li>🏠 Dashboard</li>
         <li>⚙️ Configurações</li>
         <li>📑 Relatórios (Combinado, Rotas, Eventos, Viagens, Paradas, Resumo, Gráficos, Replay)</li>
@@ -112,10 +138,10 @@
     </section>
 
     <!-- Relatórios -->
-    <section>
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">📑 Relatórios</h3>
-      <p>Podem ser gerados em diferentes formatos com informações de:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-4">📑 Relatórios</h3>
+      <p class="text-gray-200">Podem ser gerados em diferentes formatos com informações de:</p>
+      <ul class="list-disc list-inside mt-4 text-gray-300 space-y-2">
         <li>Rotas percorridas</li>
         <li>Eventos registrados</li>
         <li>Histórico de viagens e paradas</li>
@@ -123,25 +149,25 @@
       </ul>
     </section>
 
-    <!-- Orientações sobre Bloqueio Veicular -->
-    <section class="bg-yellow-50 p-6 rounded-lg shadow">
-      <h3 class="text-2xl font-bold text-blue-900 mb-4">🔒 Orientações sobre Bloqueio Veicular</h3>
-      <p>O bloqueio veicular é eficiente, mas pode ter limitações:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
+    <!-- Bloqueio Veicular -->
+    <section class="glass p-8 rounded-2xl shadow-2xl border border-yellow-400">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-4">🔒 Orientações sobre Bloqueio Veicular</h3>
+      <p class="text-gray-200">O bloqueio veicular é eficiente, mas pode ter limitações:</p>
+      <ul class="list-disc list-inside mt-4 text-gray-300 space-y-2">
         <li><b>Área sem cobertura:</b> comando executado quando voltar o sinal.</li>
         <li><b>Sem sinal no envio:</b> comando fica pendente até reconexão.</li>
         <li><b>Veículo em movimento:</b> não recomendado bloquear em alta velocidade.</li>
         <li><b>Status incorreto:</b> pode indicar movimento por atraso, sensores ou reboque.</li>
       </ul>
-      <p class="mt-4">Mesmo bloqueado, o veículo pode se mover se empurrado ou rebocado. O motor continua cortado.</p>
+      <p class="mt-4 text-gray-200">Mesmo bloqueado, o veículo pode se mover se empurrado ou rebocado. O motor continua cortado.</p>
     </section>
 
   </main>
 
   <!-- Rodapé -->
-  <footer class="bg-blue-900 text-white text-center p-4 mt-12">
-    <p>&copy; 2025 Global Rastreamento - Todos os direitos reservados</p>
-    <a href="https://privacy.globalrastreamento.net.br/" target="_blank" class="underline text-yellow-400 hover:text-yellow-300">Política de Privacidade</a>
+  <footer class="glass text-center mt-20 py-6">
+    <p class="text-gray-200">&copy; 2025 Global Rastreamento - Todos os direitos reservados</p>
+    <a href="https://privacy.globalrastreamento.net.br/" target="_blank" class="neon-link underline">Política de Privacidade</a>
   </footer>
 
   <!-- Botão WhatsApp -->
