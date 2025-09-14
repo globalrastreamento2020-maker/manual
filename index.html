@@ -46,6 +46,45 @@
       color: #ffeb3b;
       text-shadow: 0 0 8px #ffeb3b, 0 0 12px #ffeb3b;
     }
+
+    /* Responsivo - wrapper do vídeo */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    /* Botão do YouTube */
+    .btn-youtube {
+      display: inline-block;
+      background: linear-gradient(90deg,#ff3b3b,#ffb347);
+      color: #111;
+      padding: .6rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 8px 30px rgba(255,75,75,0.2);
+      transition: transform .2s ease, box-shadow .2s ease;
+      text-decoration: none;
+    }
+    .btn-youtube:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(255,75,75,0.28); }
+
+    /* Ajuste de espaçamento em telas pequenas */
+    @media (max-width: 640px) {
+      .video-wrapper { padding-bottom: 56.25%; }
+    }
   </style>
 </head>
 <body class="font-sans">
@@ -68,6 +107,26 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-6 space-y-16">
+
+    <!-- Tutorial em Vídeo -->
+    <section class="glass p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-3xl font-bold text-yellow-400 mb-6">📺 Tutorial em Vídeo — Aplicativo</h3>
+
+      <p class="text-gray-200 mb-4">Assista ao passo a passo do aplicativo: demonstração de login, visualização de veículos, relatórios e comandos.</p>
+
+      <!-- Vídeo embed responsivo -->
+      <div class="video-wrapper mb-4">
+        <!-- vídeo embed (ID: XWHL8ozs3Ww) -->
+        <iframe src="https://www.youtube.com/embed/XWHL8ozs3Ww" title="Tutorial Global Rastreamento - App" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://youtu.be/XWHL8ozs3Ww?si=gQMsCIylEYD1TV9a" target="_blank" rel="noopener" class="btn-youtube">
+          ▶️ Abrir no YouTube
+        </a>
+        <span class="text-gray-300 text-sm">Duração: veja o vídeo no YouTube para legendas e qualidade ajustável.</span>
+      </div>
+    </section>
 
     <!-- Status dos Veículos -->
     <section class="glass p-8 rounded-2xl shadow-2xl">
